@@ -1,0 +1,115 @@
+@import '../../styles/settings/_settings';
+
+// New Page Css
+.header_main {
+  background-color: $secoundary-color;
+  padding: 10px 0;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white-color;
+    // max-width: 1200px;
+    margin: 0 auto;
+    .logo {
+      font-size: 24px;
+    }
+    .links {
+      display: flex;
+      /* align-items: center; */
+      gap: 20px;
+      transition: all 0.3s;
+      a {
+        color: $white-color;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        line-height: normal;
+        text-decoration: none;
+        display: flex;
+        align-content: center;
+        line-height: 30px;
+
+        &:hover {
+          color: $white-color;
+        }
+      }
+      .cross_btn {
+        padding-top: 10px;
+        padding-right: 0;
+        color: white;
+      }
+      .cross_btn {
+        display: none;
+      }
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      .bar {
+        width: 25px;
+        height: 2px;
+        background-color: $white-color;
+        margin: 3px 0;
+        transition: all 0.3s;
+      }
+    }
+    @media (max-width: 768px) {
+      .links.open {
+        display: flex;
+        width: 70vw;
+        position: fixed;
+        height: 100%;
+        background: #153443;
+        z-index: 9;
+        animation: slideOut 0.7s ease-in;
+      }
+      .links.close {
+        animation: slideIn 0.5s ease-out;
+      }
+      .links {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        padding: 20px;
+        width: 70vw;
+        a {
+          line-height: 20px;
+        }
+      }
+      .hamburger {
+        display: flex;
+      }
+      .cross_btn {
+        display: flex;
+        border: none;
+        background-color: transparent;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
