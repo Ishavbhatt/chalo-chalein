@@ -24,7 +24,64 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.banner_slider .slick-dots {
+  bottom: 20px;
+  z-index: 2;
+
+  @media only screen and (max-width: 768px) {
+    bottom: 5px;
+  }
+}
+
+.banner_slider .slick-dots li {
+  margin: 0 5px;
+  width: 30px;
+  height: auto;
+
+  @media only screen and (max-width: 768px) {
+    width: 20px;
+  }
+}
+
+.banner_slider .slick-list .slick-track .slick-slide>div {
+  width: 100%;
+}
+
+.banner_slider .slick-dots li button {
+  background-color: rgba(255, 255, 255, 0.50);
+  height: 5px;
+  width: 30px;
+  border-radius: 3px;
+  margin: auto;
+  padding: 2px;
+
+  @media only screen and (max-width: 768px) {
+    height: 4px;
+    width: 20px;
+  }
+}
+
+.banner_slider .slick-dots .slick-active button {
+  background-color: $white-color;
+}
+
+.banner_slider .slick-dots li button::before {
+  display: none;
+}
+
